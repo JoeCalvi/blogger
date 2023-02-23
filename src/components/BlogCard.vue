@@ -10,7 +10,7 @@
               <div class="row mt-5">
                 <div class="col-12 text-end mt-5">
                   <router-link :to="{ name: 'Blog', params: { blogId: blog.id } }">
-                    <button class="btn btn-info">See More</button>
+                    <button class="btn btn-info" @click="setActiveBlog()">See More</button>
                   </router-link>
                 </div>
               </div>
@@ -24,6 +24,7 @@
 <script>
 import { Blog } from '../models/Blog.js';
 import { computed } from 'vue'
+import { blogsService } from '../services/BlogsService.js';
 
 export default {
     props: {
@@ -34,7 +35,10 @@ export default {
     },
     setup(props){
         return {
-            backgroundImg: computed(() => `url('${props.blog.imgUrl}')`)
+            backgroundImg: computed(() => `url('${props.blog.imgUrl}')`),
+            setActiveBlog() {
+              blogsService.setActiveBlog(props.blog)
+            }
         }
     }
 }
