@@ -35,21 +35,4 @@ export default {
 
 <style scoped lang="scss">
 
-.blog-img{
-  height: 40vh;
-  width: 100%;
-  object-fit: cover;
-}
-
-.blog-post{
-  background-image: url('https://pbs.twimg.com/profile_images/704028352152215553/8JKiR5mp_400x400.jpg');
-  object-fit: cover;
-  text-shadow: 1px 2px 2px rgb(202, 219, 76);
-}
-
-.creator-img{
-  height: 10vh;
-  width: 10vh;
-}
-
 </style>

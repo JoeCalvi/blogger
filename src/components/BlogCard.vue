@@ -2,10 +2,17 @@
     <div class="BlogCard">
         <div class="card blog-post blog-img my-3">
           <div class="card-body">
-            <div class="row">
-              <div class="col-12 d-flex align-items-center justify-content-between">
+            <div class="row mb-5">
+              <div class="col-12 d-flex align-items-center justify-content-between mb-5">
                 <h5>{{ blog.title }}</h5>
                 <img :src="blog.creator.picture" alt="" class="creator-img rounded-circle">
+              </div>
+              <div class="row mt-5">
+                <div class="col-12 text-end mt-5">
+                  <router-link :to="{ name: 'Blog', params: { blogId: blog.id } }">
+                    <button class="btn btn-info">See More</button>
+                  </router-link>
+                </div>
               </div>
             </div>
           </div>
